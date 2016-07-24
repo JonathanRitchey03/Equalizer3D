@@ -3,7 +3,7 @@
 #import <Foundation/Foundation.h>
 
 #define NUM_BANDS 1280
-#define BAND_STEP 0.0625 
+#define BAND_STEP 0.06125 
 //0.125
 static NSInteger FREQ_BANDS = NUM_BANDS;
 
