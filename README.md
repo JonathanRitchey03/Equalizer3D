@@ -5,6 +5,9 @@ Written in Swift. Uses Apple SceneKit for 3D graphics. Uses
 
 #### Requirements
 
-In order to get a good frame rate, run the app on an iOS device that supports metal. The code was tested out using an iPhone 6s.
+In order to get a good frame rate, run the app on an iOS device that supports Metal. The code was tested out using an iPhone 6s.
+
+#### Screens
+
 
 
