@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		AB26FE8A1D445C52009EA30E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26FE891D445C52009EA30E /* AppDelegate.swift */; };
 		AB26FE8C1D445C52009EA30E /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = AB26FE8B1D445C52009EA30E /* art.scnassets */; };
-		AB26FE8E1D445C52009EA30E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26FE8D1D445C52009EA30E /* GameViewController.swift */; };
+		AB26FE8E1D445C52009EA30E /* Audio3DVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26FE8D1D445C52009EA30E /* Audio3DVisualizer.swift */; };
 		AB26FE911D445C52009EA30E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB26FE8F1D445C52009EA30E /* Main.storyboard */; };
 		AB26FE931D445C52009EA30E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB26FE921D445C52009EA30E /* Assets.xcassets */; };
 		AB26FE961D445C52009EA30E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB26FE941D445C52009EA30E /* LaunchScreen.storyboard */; };
@@ -26,7 +26,7 @@
 		AB26FE861D445C52009EA30E /* Audio3DVisualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Audio3DVisualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB26FE891D445C52009EA30E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB26FE8B1D445C52009EA30E /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		AB26FE8D1D445C52009EA30E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		AB26FE8D1D445C52009EA30E /* Audio3DVisualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio3DVisualizer.swift; sourceTree = "<group>"; };
 		AB26FE901D445C52009EA30E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB26FE921D445C52009EA30E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB26FE951D445C52009EA30E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 				AB26FED11D445FCF009EA30E /* Frameworks */,
 				AB26FE891D445C52009EA30E /* AppDelegate.swift */,
 				AB26FE8B1D445C52009EA30E /* art.scnassets */,
-				AB26FE8D1D445C52009EA30E /* GameViewController.swift */,
+				AB26FE8D1D445C52009EA30E /* Audio3DVisualizer.swift */,
 				AB26FE8F1D445C52009EA30E /* Main.storyboard */,
 				AB26FE921D445C52009EA30E /* Assets.xcassets */,
 				AB26FE941D445C52009EA30E /* LaunchScreen.storyboard */,
@@ -243,7 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB26FF191D4460FA009EA30E /* Superpowered.mm in Sources */,
-				AB26FE8E1D445C52009EA30E /* GameViewController.swift in Sources */,
+				AB26FE8E1D445C52009EA30E /* Audio3DVisualizer.swift in Sources */,
 				AB26FF151D446098009EA30E /* SuperpoweredIOSAudioIO.mm in Sources */,
 				AB26FE8A1D445C52009EA30E /* AppDelegate.swift in Sources */,
 			);

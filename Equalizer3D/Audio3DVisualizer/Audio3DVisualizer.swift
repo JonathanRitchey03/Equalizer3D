@@ -1,5 +1,5 @@
 //
-//  GameViewController.swift
+//  Audio3DVisualizer.swift
 //  Audio3DVisualizer
 //
 //  Created by Jonathan Ritchey on 7/23/16.
@@ -18,7 +18,7 @@ extension UIColor {
     }
 }
 
-class GameViewController: UIViewController {
+class Audio3DVisualizer: UIViewController {
 
     var scnView: SCNView!
     var scnScene: SCNScene!
@@ -166,7 +166,7 @@ class GameViewController: UIViewController {
     }
 }
 
-extension GameViewController: SCNSceneRendererDelegate {
+extension Audio3DVisualizer: SCNSceneRendererDelegate {
     func renderer(renderer: SCNSceneRenderer, updateAtTime time: NSTimeInterval) {
         getFrequencyOnRender()
         frameCount += 1
@@ -174,7 +174,7 @@ extension GameViewController: SCNSceneRendererDelegate {
 }
 
 // MARK: - Audio
-extension GameViewController {
+extension Audio3DVisualizer {
     
     func colorForBand(n: Int) -> UIColor {
         let range = CGFloat(0.8)
