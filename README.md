@@ -9,7 +9,7 @@ In order to get a good frame rate, run the app on an iOS device that supports Me
 
 #### Movie
 
-[![ScreenShot](https://github.com/JonathanRitchey03/Equalizer3D/blob/master/Equalizer3D/Docs/Movies/MovieThumbnail.png?raw=true)](https://youtu.be/0ocha2utgpQ)
+[![ScreenShot](https://raw.githubusercontent.com/JonathanRitchey03/Equalizer3D/master/Equalizer3D/Docs/Movies/MovieThumbnail.png)](https://youtu.be/0ocha2utgpQ)
 
 #### Screenshots
 
