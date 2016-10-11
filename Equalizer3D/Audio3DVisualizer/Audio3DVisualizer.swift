@@ -38,11 +38,11 @@ class Audio3DVisualizer: UIViewController {
     var layers:[CALayer] = []
 
     enum VisualizationType {
-        case Rectangle
-        case Spiral
+        case rectangle
+        case spiral
     }
     
-    var visualizationType = VisualizationType.Spiral
+    var visualizationType = VisualizationType.spiral
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,22 +60,22 @@ class Audio3DVisualizer: UIViewController {
         scnView.addGestureRecognizer(tapGesture)
     }
     
-    func handleTap(gestureRecognize: UIGestureRecognizer) {
+    func handleTap(_ gestureRecognize: UIGestureRecognizer) {
         print("handleTap")
-        if visualizationType == .Spiral {
-            visualizationType = .Rectangle
+        if visualizationType == .spiral {
+            visualizationType = .rectangle
             configGridRectangle()
         } else {
-            visualizationType = .Spiral
+            visualizationType = .spiral
             configGridSpiral()
         }
     }
     
-    override func shouldAutorotate() -> Bool {
+    override var shouldAutorotate : Bool {
         return true
     }
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
     
@@ -85,7 +85,7 @@ class Audio3DVisualizer: UIViewController {
         scnView.allowsCameraControl = true
         scnView.autoenablesDefaultLighting = true
         scnView.delegate = self
-        scnView.playing = true
+        scnView.isPlaying = true
     }
     
     func setupScene() {
@@ -121,16 +121,16 @@ class Audio3DVisualizer: UIViewController {
             gridNode.addChildNode(node)
         }
         switch visualizationType {
-        case .Rectangle:
+        case .rectangle:
             configGridRectangle()
-        case .Spiral:
+        case .spiral:
             configGridSpiral()
         }
         setupGridAutoRotation()
     }
     
     func setupGridAutoRotation() {
-        self.gridNode.runAction(SCNAction.repeatActionForever(SCNAction.rotateByX(0, y: 2*CGFloat(M_PI), z: 0, duration: 30)))
+        self.gridNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2*CGFloat(M_PI), z: 0, duration: 30)))
     }
     
     func configGridRectangle() {
@@ -157,7 +157,7 @@ class Audio3DVisualizer: UIViewController {
         }
     }
     
-    func createCube(width width: CGFloat, length: CGFloat, position: SCNVector3) -> SCNNode {
+    func createCube(width: CGFloat, length: CGFloat, position: SCNVector3) -> SCNNode {
         var geometry: SCNGeometry
         geometry = SCNBox(width: width, height: 1.0, length: length, chamferRadius: 0.3)
         let geometryNode = SCNNode(geometry: geometry)
@@ -167,7 +167,7 @@ class Audio3DVisualizer: UIViewController {
 }
 
 extension Audio3DVisualizer: SCNSceneRendererDelegate {
-    func renderer(renderer: SCNSceneRenderer, updateAtTime time: NSTimeInterval) {
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         getFrequencyOnRender()
         frameCount += 1
     }
@@ -176,7 +176,7 @@ extension Audio3DVisualizer: SCNSceneRendererDelegate {
 // MARK: - Audio
 extension Audio3DVisualizer {
     
-    func colorForBand(n: Int) -> UIColor {
+    func colorForBand(_ n: Int) -> UIColor {
         let range = CGFloat(0.8)
         let t = CGFloat(n) / CGFloat(FREQ_BANDS)
         
@@ -190,11 +190,11 @@ extension Audio3DVisualizer {
             let newColor = UIColor(red: 0.5 + color.components.red * 0.5,
                                    green: 0.5 + color.components.green * 0.5,
                                    blue: 0.5 + color.components.blue * 0.5, alpha: 1.0)
-            let newCGColor = newColor.CGColor
+            let newCGColor = newColor.cgColor
             layers.append(CALayer())
             
             layers[n].backgroundColor = newCGColor
-            layers[n].frame = CGRectZero
+            layers[n].frame = CGRect.zero
             self.view.layer.addSublayer(layers[n])
         }
         
@@ -204,7 +204,7 @@ extension Audio3DVisualizer {
     
     func getFrequencyOnRender() {
         // Get the frequency values.
-        let frequencies = UnsafeMutablePointer<Float>.alloc(FREQ_BANDS)
+        let frequencies = UnsafeMutablePointer<Float>.allocate(capacity: FREQ_BANDS)
         superpowered.getFrequencies(frequencies)
         
         // Wrapping the UI changes in a CATransaction block like this prevents animation/smoothing.
@@ -215,7 +215,7 @@ extension Audio3DVisualizer {
         // Set the dimension of every frequency bar.
         let originY:CGFloat = self.view.frame.size.height - 40
         let width:CGFloat = 320.0 / CGFloat(NUM_BANDS)
-        var frame:CGRect = CGRectMake(20, 0, width, 0)
+        var frame:CGRect = CGRect(x: 20, y: 0, width: width, height: 0)
         for n in 0..<FREQ_BANDS {
             frame.size.height = 4 + CGFloat(frequencies[n]) * 4000
             frame.origin.y = originY - frame.size.height
@@ -236,7 +236,7 @@ extension Audio3DVisualizer {
         }
         
         CATransaction.commit()
-        frequencies.dealloc(FREQ_BANDS)
+        frequencies.deallocate(capacity: FREQ_BANDS)
         
 //        if (frameCount % 20 == 0) {
             for n in 0..<FREQ_BANDS {
