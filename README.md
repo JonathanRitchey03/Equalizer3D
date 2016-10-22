@@ -1,5 +1,7 @@
 ###Equalizer3D
 
+[![codebeat badge](https://codebeat.co/badges/1f28e033-fa8c-4f0a-96ba-2a86c67246bf)](https://codebeat.co/projects/github-com-jonathanritchey03-equalizer3d)
+
 Written in Swift. Uses Apple SceneKit for 3D graphics. Uses 
 [Superpowered](https://github.com/superpoweredSDK/Low-Latency-Android-Audio-iOS-Audio-Engine)  for Audio Processing. Note: They have free licensing for everything except HLS streaming audio. Here's their [license agreement](https://github.com/JonathanRitchey03/Equalizer3D/blob/master/Equalizer3D/Audio3DVisualizer/Frameworks/SuperPowered/SuperpoweredLicenseJune232015%2BLogosForCredit.pdf). 
 
