@@ -1,5 +1,8 @@
 ###Equalizer3D
 
+[![Build Status](https://www.bitrise.io/app/ff624be0c29588d9.svg?token=xvWR3FdjSHo7tuBhprqTGQ&branch=master)](https://www.bitrise.io/app/ff624be0c29588d9)
+![Platforms](https://img.shields.io/badge/platforms-ios-green.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 [![codebeat badge](https://codebeat.co/badges/1f28e033-fa8c-4f0a-96ba-2a86c67246bf)](https://codebeat.co/projects/github-com-jonathanritchey03-equalizer3d)
 
 Written in Swift. Uses Apple SceneKit for 3D graphics. Uses 
